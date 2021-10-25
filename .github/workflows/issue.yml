@@ -5,7 +5,7 @@ on:
   
 jobs:
   build:
-    name: message 
+    name: send discord notification 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -15,9 +15,7 @@ jobs:
         webhook_id: ${{ secrets.WEBHOOK_ID }}
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "#48f442"
-        username: "GitHub Bot"
-        message: "Placeholder message"
-    - name: view the github
-      run: echo "$GITHUB_CONTEXT"
-      env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}      
+        username: "${{ github.event.user.login }}"
+        avatar_url: "${{ github.event.user.avatar_url }}"
+        message: "New issue: ${{ github.event.issue.title }} (${{ github.event.issue.url }})"
+        
