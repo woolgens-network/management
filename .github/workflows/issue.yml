@@ -16,5 +16,6 @@ jobs:
         username: "GitHub Bot"
         message: "A ${{ github.event_name }} been pushed with custom color."
     - name: view the github
-      run: echo ${{ github }}
-      
+      run: echo "$GITHUB_CONTEXT"
+      env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}      
