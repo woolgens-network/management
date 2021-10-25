@@ -1,5 +1,7 @@
 name: Send discord notification
-on: [push]
+on:
+  issues:
+    types: [opened]
   
 jobs:
   build:
@@ -14,7 +16,7 @@ jobs:
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "#48f442"
         username: "GitHub Bot"
-        message: "A ${{ github.event_name }} been pushed with custom color."
+        message: "Placeholder message"
     - name: view the github
       run: echo "$GITHUB_CONTEXT"
       env:
