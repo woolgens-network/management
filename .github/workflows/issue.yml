@@ -15,3 +15,6 @@ jobs:
         color: "#48f442"
         username: "GitHub Bot"
         message: "A ${{ github.event_name }} been pushed with custom color."
+    - name: view the github
+      run: echo ${{ github }}
+      
