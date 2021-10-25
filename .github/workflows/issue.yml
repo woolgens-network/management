@@ -1,0 +1,23 @@
+name: Send discord notification
+on:
+  issues:
+    types: [opened]
+  
+jobs:
+  build:
+    name: message 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: send message
+      uses: appleboy/discord-action@master
+      with:
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        color: "#48f442"
+        username: "GitHub Bot"
+        message: "Placeholder message"
+    - name: view the github
+      run: echo "$GITHUB_CONTEXT"
+      env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}      
