@@ -1,4 +1,4 @@
-name: discord-notifier
+name: 'discord-notifier'
 on:
   issues:
     types: [opened]
@@ -16,25 +16,5 @@ jobs:
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "#4078c0"
         username: "Issue Bot"
-        message: "${{ github.event.issue.title }}: ${{ github.event.issue.html_url }}"
-
----
-name: discord-deploy-notifier
-on:
-  issues:
-    types: [closed]
-  
-jobs:
-  build:
-    name: send discord notification 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: send message
-      uses: appleboy/discord-action@master
-      with:
-        webhook_id: ${{ secrets.WEBHOOK_ID }}
-        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-        color: "#4078c0"
-        username: "Deployment Bot"
-        message: "An issue is ready for deployment! ${{ github.event.issue.title }}: ${{ github.event.issue.html_url }}"
+        message: "A new issue has been created! ${{ github.event.issue.title }}: ${{ github.event.issue.html_url }}"
+        
