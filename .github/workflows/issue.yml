@@ -1,4 +1,5 @@
 name: 'discord-notifier'
+type: pipeline
 on:
   issues:
     types: [opened]
@@ -20,6 +21,7 @@ jobs:
 
 ---
 name: 'discord-deploy-notifier'
+type: pipeline
 on:
   issues:
     types: [closed]
