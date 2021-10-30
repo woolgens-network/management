@@ -17,4 +17,3 @@ jobs:
         color: "#4078c0"
         username: "Issue Bot"
         message: "A new issue has been created! ${{ github.event.issue.title }}: ${{ github.event.issue.html_url }}"
-        
