@@ -1,4 +1,4 @@
-name: 'Close issues'
+name: 'Issue States'
 
 on:
   project_card:
@@ -14,5 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: dessant/issue-states@v2
-        with:
-          closed-issue-columns: 'Ready for deployment, Live'
+      
