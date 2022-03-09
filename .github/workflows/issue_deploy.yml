@@ -15,5 +15,4 @@ jobs:
         webhook_id: ${{ secrets.WEBHOOK_ID }}
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "#4078c0"
-        username: "Deploy Bot"
         message: "A new issue is ready for deployment! ${{ github.event.issue.title }}: ${{ github.event.issue.html_url }}"

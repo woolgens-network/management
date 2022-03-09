@@ -15,5 +15,4 @@ jobs:
         webhook_id: ${{ secrets.WEBHOOK_ID }}
         webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
         color: "#4078c0"
-        username: "Issue Bot"
-        message: "${{ github.event.issue.title }}: ${{ github.event.issue.html_url }}"
+        message: "A new issue has been created: ${{ github.event.issue.title }} - ${{ github.event.issue.html_url }}"
